@@ -27,8 +27,6 @@ import CodeBlock from './CodeBlock'
 // }
 
 function List() {
-  console.log('List')
-
   return (
     <div className='container_wrapper'>
 

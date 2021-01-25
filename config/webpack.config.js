@@ -532,8 +532,8 @@ module.exports = function(webpackEnv) {
             },
             {
               test: /\.md$/,
-              loader: require.resolve('raw-loader'),
-              // use: 'raw-loader',
+              // loader: require.resolve('raw-loader'),
+              use: 'raw-loader',
             },
 
             // "file" loader makes sure those assets get served by WebpackDevServer.
