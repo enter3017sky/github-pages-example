@@ -2,8 +2,8 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "order/properties-alphabetical-order": null, // 不照字母順序排序
-    "order/properties-order": [ // 設定自己的排序
+    "order/properties-alphabetical-order": null,
+    "order/properties-order": [
       "position",
       "top",
       "right",

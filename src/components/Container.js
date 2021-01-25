@@ -2,7 +2,8 @@
 // import allCodeStyle from './register_all_style'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
-import apiMd from '../md/api.md'
+
+import md from '../../README.md'
 import CodeBlock from './CodeBlock'
 
 // import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -34,7 +35,7 @@ function List() {
       <ReactMarkdown
         plugins={[gfm]}
         escapeHtml={false}
-        source={apiMd}
+        source={md}
         renderers={{
           code: CodeBlock,
         }}

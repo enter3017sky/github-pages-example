@@ -1,72 +1,51 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 將完成的 React 專案發佈在 Github Pages
 
-## Available Scripts
+> 參考來源：[Deployment · Create React App](https://facebook.github.io/create-react-app/docs/deployment)
 
-In the project directory, you can run:
+### 1. 將 _homepage_ 新增到 _package.json_
 
-### `yarn start`
+`"homepage": "https://enter3017sky.github.io/github-pages-example",`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2. 將 gh-pages 部屬的指令添加到 _package.json_
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+執行兩個
 
-### `yarn test`
+```
+  "scripts": {
++   "predeploy": "npm run build",
++   "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+或一起做完
 
-### `yarn build`
+```
+  "scripts": {
++   "deploy": "npm run build && gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. 安裝 gh-pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+用 npm 安裝 _gh-pages_ `npm install --save gh-pages`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+或 yarn，也可以使用這個 `yarn add gh-pages`
 
-### `yarn eject`
+### 4. github 開新的專案，然後 vscode 就輸入指令推上 Github
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+git init
+git add .
+git commit -m "first commit"
+git remote add origin <https://github.com/enter3017sky/github-pages-example.git>
+git push -u origin master
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 5. 部屬，執行第二個步驟加入的指令，`npm run deploy`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![image](https://raw.githubusercontent.com/enter3017sky/mentor-program-2nd-blog/master/picture/github-pages.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-## npm run eject
+但在公開的項目上可以在 `Settings -> Branches -> Default branch` 設定顯示為 **master** 或 **gh-pages**
